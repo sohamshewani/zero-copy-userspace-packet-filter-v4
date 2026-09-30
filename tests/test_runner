@@ -1,0 +1,24 @@
+// This file serves as the main test runner for the zero-copy-userspace-packet-filter project.
+// It compiles and runs all the test suites.
+
+#include <stdio.h>
+#include <stdlib.h>
+
+#define TEST_SUITE_PATH "tests/"
+
+int main() {
+    int test_pass = 1;
+
+    // Compile and run tests
+    test_pass &= system("make tests");
+
+    if (test_pass) {
+        printf("All tests passed successfully.
+");
+    } else {
+        printf("Some tests failed.
+");
+    }
+
+    return test_pass;
+}
